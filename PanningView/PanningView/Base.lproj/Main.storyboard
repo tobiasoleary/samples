@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="PanningView" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QWO-9h-9Ul" userLabel="labelContainer">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="uaa-hB-v8B" appends="YES" id="H0i-ke-rKz"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="QWO-9h-9Ul" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="2Z3-5u-Qoq"/>
+                            <constraint firstItem="QWO-9h-9Ul" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="top" id="AoN-1f-hDb"/>
+                            <constraint firstItem="QWO-9h-9Ul" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="SQX-G9-rAC"/>
+                            <constraint firstAttribute="trailing" secondItem="QWO-9h-9Ul" secondAttribute="trailing" id="XAB-Xk-vD9"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="labelContainer" destination="QWO-9h-9Ul" id="bQr-dM-ZPr"/>
+                        <outlet property="panGesture" destination="uaa-hB-v8B" id="w2R-Kd-s6X"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="uaa-hB-v8B">
+                    <connections>
+                        <action selector="moveLabel:" destination="vXZ-lx-hvc" id="qQ8-Sq-qm3"/>
+                        <outlet property="delegate" destination="vXZ-lx-hvc" id="QY4-lK-Qft"/>
+                    </connections>
+                </panGestureRecognizer>
+            </objects>
+        </scene>
+    </scenes>
+</document>
